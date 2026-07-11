@@ -14,8 +14,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Premium Experience",
+  title: "AidUp — Modern Premium Experience",
   description: "A cinematic scrolling experience inspired by Apple.",
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({

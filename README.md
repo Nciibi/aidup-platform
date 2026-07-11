@@ -1,381 +1,423 @@
-<p align="center">
-  <img src="assets/logo-hand-heart.svg" alt="AidUp logo — a hand holding a heart" width="120" height="120">
-</p>
+<div align="center">
+  <img src="assets/logo-hand-heart.svg" alt="AidUp" width="100">
+  <h1>🕊️ AidUp</h1>
+  <p><strong>Transparent Charitable Giving — From People Who Care, to Causes That Matter</strong></p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AidUp-Charitable%20Platform-3DDC84?style=for-the-badge" alt="AidUp">
-  <img src="https://img.shields.io/badge/Stack-MERN%20%2B%20Kotlin-61DAFB?style=for-the-badge" alt="Stack">
-  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
-</p>
-
-<h1 align="center">🕊️ AidUp</h1>
-
-<p align="center">
-  <strong>A full-stack charitable-giving platform that connects donors with verified organizers running transparent humanitarian campaigns.</strong>
-</p>
-
-<p align="center">
-  <a href="./backend">Backend API</a> ·
-  <a href="./frontend">Web Frontend</a> ·
-  <a href="./mobile">Android App</a> ·
-  <a href="./backend/README.md">API Reference</a>
-</p>
+  <p align="center">
+    <a href="#key-features"><img src="https://img.shields.io/badge/Read_More-↓-ea580c?style=for-the-badge" alt="Explore"></a>
+    <a href="https://github.com/Nciibi/aidup-platform"><img src="https://img.shields.io/github/stars/Nciibi/aidup-platform?style=for-the-badge&label=Stars&logo=github&color=ea580c" alt="Stars"></a>
+    <a href="./backend/README.md"><img src="https://img.shields.io/badge/API_Reference-📖-ea580c?style=for-the-badge" alt="API Docs"></a>
+    <br>
+    <img src="https://img.shields.io/badge/Stack-MERN_%2B_Kotlin-000?style=flat-square&logo=repo&color=1a1a2e" alt="Stack">
+    <img src="https://img.shields.io/badge/Node.js_22-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node">
+    <img src="https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React">
+    <img src="https://img.shields.io/badge/Kotlin_Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin">
+    <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+    <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License">
+  </p>
+</div>
 
 ---
 
-## 📑 Table of Contents
+AidUp is a **production-grade**, full-stack charitable platform that connects donors with verified campaign organizers. Built for transparency, security, and scale — across **web** and **mobile** — with a single shared API.
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Architecture](#-architecture)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Backend](#1-backend-api)
-  - [Frontend](#2-web-frontend)
-  - [Mobile](#3-android-app)
-- [Configuration](#-configuration)
-- [API Reference](#-api-reference)
-- [Security Model](#-security-model)
-- [Testing](#-testing)
-- [Contributing](#-contributing)
-- [Roadmap](#-roadmap)
-- [License](#-license)
+We believe in making giving **accessible**, **verifiable**, and **impactful**.
+
+<div align="center">
+  <img src="frontend/src/assets/hero.png" alt="AidUp Platform Preview" width="80%" style="border-radius: 12px; border: 1px solid #333;">
+</div>
+
+> 🎯 **Perfect for**: Non-profit tech teams, hackathon projects, portfolio showcases, and anyone building mission-driven platforms.
 
 ---
 
-## 🌟 Overview
+## 📋 Table of Contents
 
-**AidUp** is a production-grade donation platform engineered to bridge the gap between people who want to help and the organizers running campaigns for those in need — whether that's feeding families, rescuing animals, or delivering humanitarian relief to conflict zones.
+- [Why AidUp?](#why-aidup)
+- [Quick Start](#quick-start)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Getting Started in Detail](#getting-started-in-detail)
+- [Environment Variables](#environment-variables)
+- [API Map](#api-map)
+- [Security Deep-Dive](#security-deep-dive)
+- [Testing & Quality](#testing--quality)
+- [Contributing](#contributing)
+- [Roadmap](#roadmap)
+- [License](#license)
 
-The platform is built around three first-class clients that share a single, well-documented REST + WebSocket API:
+---
 
-| Application | Location | Purpose |
-| --- | --- | --- |
-| **Backend API** | [`backend/`](./backend) | Business logic, authentication, persistence, real-time services |
-| **Web Frontend** | [`frontend/`](./frontend) | Responsive browser experience for donors, organizers & admins |
-| **Android App** | [`mobile/`](./mobile) | Native mobile experience with QR-code login |
+## 💡 Why AidUp?
 
-> 💡 This repository (`aidup-final-result`) is the **integrated, final build** of the AidUp platform, combining the backend, web client, and native mobile app into one cohesive product.
+| For | AidUp delivers |
+|---|---|
+| **Job candidates** | A production-grade full-stack (+ native mobile) architecture you can point to. MERN + Kotlin/Compose, JWT auth, TOTP MFA, WebSockets, RBAC, audit logging, file pipelines — all in one repo. |
+| **Contributors** | Clean separation of concerns, documented APIs, Zod-validated inputs, consistent coding patterns across backend/frontend/mobile, and a welcoming issue tracker. |
+| **Non-profits** | A ready-to-deploy donation platform with organizer verification, transparent campaign tracking, and multi-platform reach (web + Android). |
+| **Developers** | Modern tooling: React 19, Vite 8, Tailwind 4, TypeScript 6, Kotlin Compose, CameraX, Socket.IO, and more. |
+
+---
+
+## 🪄 Quick Start
+
+```bash
+# Backend
+cd backend && npm install && npm run dev          # → http://localhost:5000
+
+# Frontend (in another terminal)
+cd frontend && npm install && npm run dev           # → http://localhost:5173
+
+# Mobile (Android Studio)
+# Open mobile/ → Sync Gradle → Run on device
+```
+
+<details>
+<summary><b>📋 Prerequisites</b></summary>
+
+| Dependency | Version | Notes |
+|------------|---------|-------|
+| Node.js | ≥ 18 | Required for backend + frontend |
+| npm | ≥ 9 | Ships with Node |
+| MongoDB | ≥ 6 | Local or Atlas — configurable via `.env` |
+| Android Studio | Arctic Fox+ | For the mobile app |
+| Java JDK | 17 | Gradle requirement |
+
+</details>
 
 ---
 
 ## ✨ Key Features
 
-<details open>
-<summary><b>🔐 Authentication & Identity</b></summary>
+### 🔐 Enterprise-Grade Authentication
+| Capability | Implementation |
+|---|---|
+| **Email/Password** | Strong-policy registration (12+ chars, upper, lower, num, special) |
+| **JWT Sessions** | Access tokens (15 m) + `httpOnly` refresh cookies (7 d) |
+| **Google OAuth** | Seamless one-tap sign-in |
+| **TOTP MFA** | App-based 2FA with setup, verify, and step-up login |
+| **Email Verification** | 6-digit codes on signup and password reset |
+| **Role-Based Access** | `donator` · `organizer` · `admin` — isolated route guards |
 
-- Email / password registration with enforced strong-password policy.
-- **JWT auth** — short-lived access tokens (15 min) + `httpOnly` refresh cookies (7 days).
-- **Google OAuth** sign-in (`google-auth-library`).
-- **TOTP Multi-Factor Authentication** — setup, verify, enable/disable, and step-up login.
-- Email verification codes on signup and password reset flows.
-- Role-based access control for **Donator**, **Organizer**, and **Admin**.
+### 📱 Cross-Device QR Login
+- PC generates a session; mobile scans and approves in real time via **Socket.IO**
+- No password re-entry on secondary devices — frictionless UX
 
-</details>
+### 📢 Campaign Engine
+- **Organizers** create campaigns with images, videos, categories, and funding goals
+- **Donors** contribute with proof-of-payment uploads
+- Transparent `pending → approved / rejected` moderation workflow
+- Public browseable catalog for guests
 
-<details open>
-<summary><b>📱 Cross-Device QR Login</b></summary>
-
-- A PC browser generates a session QR code; a logged-in mobile app scans and approves it.
-- Real-time approval delivered over a **Socket.IO** channel (`qr:authenticated` event).
-- No password re-entry on secondary devices.
-
-</details>
-
-<details open>
-<summary><b>📢 Campaigns & Donations</b></summary>
-
-- Organizers create, update, and delete campaigns with images, videos, categories, goals, and payment methods.
-- Donors browse, search, and contribute with **proof-of-payment** uploads.
-- Donations flow through `pending → approved / rejected` moderation states.
-- Public, read-only browsing of campaigns, organizers, and donors.
-
-</details>
-
-<details open>
-<summary><b>🛡️ Admin & Moderation</b></summary>
-
-- Dashboard for overseeing users, campaigns, and verification requests.
-- Organizer verification review (documents + images).
-- Donation approvals and full **audit logging**.
-
-</details>
-
-<details open>
-<summary><b>🧱 Security Hardening</b></summary>
-
-- `helmet`, MongoDB query sanitization, HTTP parameter pollution protection.
-- Rate limiting on authentication routes.
-- Centralized error handling and structured `pino` request logging.
-
-</details>
+### 🛡️ Admin Moderation Suite
+- Dashboard for overseeing users, campaigns, and verification requests
+- Document-based organizer verification review
+- Full **audit logging** on all privileged actions
 
 ---
 
 ## 🏗️ Architecture
 
 ```mermaid
-graph TD
+graph TB
     subgraph Clients
-        Web[Web Frontend<br/>React + Vite]
-        Mobile[Android App<br/>Kotlin + Compose]
+        Web["Web Frontend<br/><sub>React 19 · Vite · Tailwind 4</sub>"]
+        Mobile["Android App<br/><sub>Kotlin · Jetpack Compose</sub>"]
     end
-
-    subgraph "Backend API (Express 5)"
-        API[REST + Middleware]
-        Auth[Auth / MFA / OAuth]
-        QR[Socket.IO QR Service]
-        Guard[RBAC + Rate Limit]
+    subgraph "Backend API · Express 5"
+        API["REST + Middleware"]
+        Auth["Auth / MFA / OAuth"]
+        Socket["Socket.IO QR Service"]
+        Guard["RBAC · Rate Limit · Audit"]
     end
-
-    subgraph Persistence & Services
-        DB[(MongoDB)]
-        Storage[(Local File Uploads)]
-        Mail[Nodemailer SMTP]
+    subgraph Data
+        DB[("MongoDB<br/><sub>Mongoose ODM</sub>")]
+        Storage[("File Uploads<br/><sub>sharp · multer</sub>")]
+        Mail[("Email Service<br/><sub>Nodemailer SMTP</sub>")]
     end
-
-    Web -->|HTTPS / WebSocket| API
-    Mobile -->|HTTPS / WebSocket| API
+    Web -->|HTTPS + WS| API
+    Mobile -->|HTTPS + WS| API
     API --> Guard --> Auth
-    API --> QR
+    API --> Socket
     API --> DB
     API --> Storage
     API --> Mail
 ```
 
-**Request flow:** Clients authenticate and receive a bearer access token + refresh cookie. Protected routes are gated by `verifyJWT` + `authorize(role)` middleware; file uploads pass through `advancedUpload` (size/type validation, image hashing via `sharp`); all privileged actions are recorded in an `AuditLog`.
+**Data flow:** Clients authenticate → receive bearer token + refresh cookie. Protected routes gate via `verifyJWT` → `authorize(role)`. File uploads validate type/size and hash images via `sharp`. Every privileged action records an `AuditLog` entry. QR sessions use Socket.IO for real-time approval.
 
 ---
 
 ## 🧰 Technology Stack
 
-### Backend
-![Node](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express%205-000000?style=flat&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
-![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=flat&logo=socketdotio&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-000000?style=flat&logo=jsonwebtokens&logoColor=white)
+<details open>
+<summary><b>Backend API</b></summary>
 
-| Concern | Library |
-| --- | --- |
-| Web framework | `express@5` |
-| ODM | `mongoose@9` |
-| Auth & crypto | `jsonwebtoken`, `bcryptjs`, `otplib`, `google-auth-library` |
-| Validation | `zod` |
-| Real-time | `socket.io` / `socket.io-client` |
-| Security | `helmet`, `@exortek/express-mongo-sanitize`, `hpp`, `express-rate-limit` |
-| Uploads & media | `multer`, `sharp` |
-| Email | `nodemailer` |
-| Logging | `pino`, `pino-http`, `pino-pretty` |
+| Category | Choice | Why |
+|---|---|---|
+| **Runtime** | Node.js 22 | Async I/O, massive ecosystem |
+| **Framework** | Express 5 | Battle-tested, modular middleware |
+| **Database** | MongoDB + Mongoose 9 | Flexible schemas, rich queries |
+| **Auth** | `jsonwebtoken` · `bcryptjs` · `otplib` · `google-auth-library` | JWT + bcrypt + TOTP + OAuth |
+| **Validation** | Zod 4 | Runtime type safety |
+| **Real-time** | Socket.IO 4 | Bidirectional event channels |
+| **Security** | `helmet` · `@exortek/express-mongo-sanitize` · `hpp` · `express-rate-limit` | Defense in depth |
+| **Media** | `multer` · `sharp` | Upload + image processing |
+| **Email** | `nodemailer` | SMTP integration |
+| **Logging** | `pino` · `pino-http` · `pino-pretty` | Structured JSON logs |
 
-### Frontend
-![React](https://img.shields.io/badge/React%2019-61DAFB?style=flat&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind%20CSS%204-38B2AC?style=flat&logo=tailwindcss&logoColor=white)
+</details>
 
-`react@19` · `react-router-dom@7` · `zustand` (state) · `axios` (API) · `framer-motion` + `gsap` + `lenis` (motion) · `lucide-react` (icons) · `html5-qrcode` · `socket.io-client`.
+<details open>
+<summary><b>Web Frontend</b></summary>
 
-> A polished **Next.js 16** marketing homepage is also included under `frontend/modern-homepage`.
+| Category | Choice |
+|---|---|
+| **Framework** | React 19 + TypeScript 6 |
+| **Bundler** | Vite 8 |
+| **Routing** | react-router-dom 7 |
+| **State** | Zustand 5 |
+| **Styling** | Tailwind CSS 4 |
+| **Animation** | framer-motion 12 · GSAP 3 · Lenis |
+| **HTTP** | Axios · socket.io-client |
+| **Auth (web)** | @react-oauth/google · html5-qrcode |
 
-### Mobile
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat&logo=android&logoColor=white)
+> Also includes a standalone **Next.js 16** marketing homepage under `frontend/modern-homepage`.
 
-`Jetpack Compose` (Material 3) · `Navigation Compose` · `Retrofit` + `OkHttp` · `CameraX` + `ZXing` (QR) · `Coil` · `DataStore` / Encrypted `SharedPreferences` · `Credential Manager` (Google) · `Biometric` · `ViewModel`.
+</details>
+
+<details open>
+<summary><b>Android App</b></summary>
+
+| Category | Choice |
+|---|---|
+| **Language** | Kotlin |
+| **UI** | Jetpack Compose · Material 3 |
+| **Navigation** | Navigation Compose |
+| **Networking** | Retrofit 2 · OkHttp 4 · Gson |
+| **Camera** | CameraX · ZXing (QR) |
+| **Auth** | Credential Manager · Biometric |
+| **Storage** | DataStore · Encrypted SharedPreferences |
+| **Images** | Coil |
+| **Min SDK** | 24 (Android 7.0) |
+| **Target SDK** | 34 (Android 14) |
+
+</details>
 
 ---
 
 ## 📂 Project Structure
 
-```text
+```
 aidup-final-result/
-├── backend/                      # 🔧 Express API + Socket.IO service
-│   ├── app.js                    #   Express wiring, global middleware, route mounting
-│   ├── server.js                 #   HTTP server, DB connect, Socket.IO bootstrap
-│   ├── config/                   #   CORS & DB options
-│   ├── controllers/              #   Request handlers (auth, campaign, donation, admin…)
-│   ├── middleware/               #   JWT auth, RBAC, uploads, rate-limit, audit, validation
-│   ├── models/                   #   Mongoose schemas
-│   ├── routes/                   #   Express routers
-│   ├── public/                   #   Public read-only routes
-│   ├── services/                 #   Email & QR-auth services
-│   ├── sockets/                  #   Socket.IO QR-login channel
-│   ├── utils/                    #   Validators, tokens, image hashing, logger
-│   ├── scripts/                  #   Seed / admin / cleanup scripts
-│   ├── uploads/                  #   User media (git-ignored)
-│   └── README.md                 #   Full API reference
 │
-├── frontend/                     # 💻 React + Vite web client
+├── backend/                          # 🔧 Express API
+│   ├── app.js                        #   Middleware wiring · route mounting
+│   ├── server.js                     #   HTTP server · DB connect · Socket.IO
+│   ├── config/                       #   CORS · DB options
+│   ├── controllers/                  #   Route handlers (auth, campaign, …)
+│   ├── middleware/                   #   JWT · RBAC · upload · audit · rate-limit
+│   ├── models/                       #   Mongoose schemas
+│   ├── routes/                       #   Express routers
+│   ├── services/                     #   Email · QR auth logic
+│   ├── sockets/                      #   Socket.IO QR channel
+│   ├── utils/                        #   Validators · tokens · image · logger
+│   ├── scripts/                      #   Seed · admin · cleanup
+│   └── README.md                     #   📘 Full API reference
+│
+├── frontend/                         # 💻 React + Vite
 │   ├── src/
-│   │   ├── api/                  #   Axios clients per domain
-│   │   ├── components/           #   UI, layout, route guards, welcome sections
-│   │   ├── hooks/                #   Auth, campaigns, donations, search…
-│   │   ├── pages/                #   Route screens
+│   │   ├── api/                      #   Axios clients per domain
+│   │   ├── components/               #   UI · layout · guards · sections
+│   │   ├── hooks/                    #   Auth · campaigns · donations · search
+│   │   ├── pages/                    #   Route screens (~15 pages)
 │   │   └── assets/
-│   ├── modern-homepage/          #   Optional Next.js marketing site
+│   ├── modern-homepage/              #   Next.js marketing site
 │   └── README.md
 │
-└── mobile/                       # 📱 Android app (Kotlin + Compose)
+└── mobile/                           # 📱 Android (Kotlin + Compose)
     ├── app/src/main/java/com/aidup/app/
-    │   ├── models/               #   Domain + auth/campaign/donation models
-    │   ├── network/              #   Retrofit client, token & DataStore managers
-    │   ├── repository/           #   API repository layer
-    │   ├── ui/screens/           #   ~20 Compose screens
-    │   ├── ui/viewmodels/        #   Per-feature ViewModels
-    │   ├── ui/theme/             #   Material 3 theming
-    │   ├── navigation/           #   Compose Navigation graph
-    │   └── utils/                #   File, network, QR-code helpers
+    │   ├── models/                   #   Domain + DTOs
+    │   ├── network/                  #   Retrofit · token · DataStore managers
+    │   ├── repository/               #   API abstraction layer
+    │   ├── ui/screens/               #   20+ Compose screens
+    │   ├── ui/viewmodels/            #   ViewModels per feature
+    │   ├── ui/theme/                 #   Material 3 theming
+    │   └── navigation/               #   Navigation graph
     └── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js** ≥ 18
-- **MongoDB** (local `mongodb://localhost:27017/aidup` or Atlas)
-- **Android Studio** (Arctic Fox or newer) for the mobile app
-- An **SMTP** account (Gmail example included) for email flows
-
-> ⚠️ The repo ships a committed `backend/.env` containing **placeholder/test secrets**. Generate your own secrets and never deploy it as-is.
+## 🚀 Getting Started in Detail
 
 ### 1. Backend API
 
 ```bash
 cd backend
 npm install
-# review/edit backend/.env  (see Configuration below)
-npm run dev      # → http://localhost:5000
+cp .env .env.local          # optional — edit as needed
+npm run dev                  # → http://localhost:5000
 ```
 
-| Script | Description |
-| --- | --- |
-| `npm run dev` | Start the API (`node server.js`) |
-| `npm start` | Production-style launch |
+Available scripts:
+
+| Script | Purpose |
+|---|---|
+| `npm run dev` | Start API server |
+| `npm start` | Production launch |
+| `node scripts/seed.js` | Seed sample data |
+| `node scripts/createAdmin.js` | Bootstrap admin account |
 
 ### 2. Web Frontend
 
 ```bash
 cd frontend
 npm install
-npm run dev      # Vite dev server (default http://localhost:5173)
-npm run build    # type-check + production build
-npm run lint     # ESLint
+npm run dev                  # → http://localhost:5173
+npm run build                # Type-check + production bundle
+npm run lint                 # ESLint
 ```
 
-Optional Next.js marketing homepage:
+Or launch the marketing homepage:
 
 ```bash
 cd frontend/modern-homepage
 npm install
-npm run dev
+npm run dev                  # → http://localhost:3000
 ```
 
 ### 3. Android App
 
-1. Open `mobile/` in **Android Studio**.
-2. **Sync Gradle** (pulls Compose BOM 2024.12, Retrofit, CameraX, DataStore, Credential Manager).
-3. Run on an emulator or physical device (minSdk 24 / targetSdk 34).
+| Step | Action |
+|---|---|
+| 1 | Open `mobile/` in Android Studio |
+| 2 | Let Gradle sync (BOM 2024.12, Compose, Retrofit, CameraX) |
+| 3 | Select a device (emulator or physical, minSdk 24) |
+| 4 | Run ▶ |
 
 ---
 
-## ⚙️ Configuration
+## ⚙️ Environment Variables
 
-Create or edit `backend/.env`:
+Configure via `backend/.env`:
 
-| Variable | Purpose |
-| --- | --- |
-| `PORT` | API port (default `5000`) |
-| `NODE_ENV` | `development` / `production` |
-| `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | Access-token signing key |
-| `REFRESH_TOKEN_SECRET` | Refresh-token signing key |
-| `GOOGLE_CLIENT_ID` | Google OAuth client ID |
-| `FRONTEND_URL` | Allowed CORS origin |
-| `EMAIL_USER` | SMTP username (e.g. Gmail) |
-| `EMAIL_PASS` | SMTP app password |
+```env
+# Required
+PORT=5000
+NODE_ENV=development
+MONGO_URI=mongodb://localhost:27017/aidup
+JWT_SECRET=<your-secret>
+REFRESH_TOKEN_SECRET=<your-secret>
 
----
+# Optional (feature-dependent)
+GOOGLE_CLIENT_ID=<for-oauth-login>
+FRONTEND_URL=http://localhost:5173
+EMAIL_USER=<smtp-user>
+EMAIL_PASS=<smtp-password>
+```
 
-## 📡 API Reference
-
-The backend exposes a **versionless REST API** plus a Socket.IO channel for QR login. All protected routes expect `Authorization: Bearer <accessToken>`.
-
-| Area | Methods | Routes |
-| --- | --- | --- |
-| **Auth core** | `POST` | `/auth/register`, `/auth/login`, `/auth/google-login` |
-| **MFA (TOTP)** | `POST` | `/auth/mfa/setup`, `/auth/mfa/verify`, `/auth/mfa/disable`, `/auth/mfa/verify-login` |
-| **Email / Password** | `POST` | `/auth/verify-registration-email`, `/auth/forgot-password`, `/auth/reset-password` |
-| **QR Login** | `POST`/`GET` | `/auth/qr/create`, `/auth/qr/scan/:id`, `/auth/qr/approve`, `/auth/qr/status/:id` |
-| **Sessions** | `GET`/`POST` | `/auth/refresh`, `/auth/logout` |
-| **Campaigns** | `POST`/`PUT`/`DELETE` | `/campain/managecampain/*` |
-| **Organizers** | `GET`/`POST`/`DELETE` | `/organizor/*` (account, dashboard, verification, campaigns) |
-| **Donators** | `GET`/`POST`/`DELETE` | `/donator/*` (account, donations) |
-| **Donations** | `POST`/`GET` | `/donation/createDonation`, `/donation/*` |
-| **Categories** | `GET` | `/category/getall` |
-| **Public data** | `GET` | `/publicca/*`, `/publicor/*`, `/publicdo/*` |
-| **Admin** | `GET`/`PUT`/`DELETE` | `/admin/*` (users, campaigns, verifications, donations, audit logs) |
-
-📘 Full request/response contracts, schemas, and examples: **[`backend/README.md`](./backend/README.md)**.
+> ⚠️ The repo ships placeholder values. **Never deploy with default secrets.**
 
 ---
 
-## 🔐 Security Model
+## 📡 API Map
 
-| Layer | Implementation |
-| --- | --- |
-| Transport & headers | `helmet`, CORS allow-list |
-| Injection / pollution | `@exortek/express-mongo-sanitize`, `hpp` |
-| Brute-force protection | `express-rate-limit` on `/auth` |
-| Token strategy | Access (15 m) in body + Refresh (7 d) in `httpOnly` cookie |
-| Authorization | `verifyJWT` → `authorize(role)` middleware chain |
-| File safety | `advancedUpload` (type/size limits) + `sharp` image hashing |
-| Auditability | `AuditLog` model + `auditLog` middleware on privileged actions |
-| Observability | `pino` / `pino-http` structured request logging |
+All endpoints are prefixed with the categories below. Authenticated routes require `Authorization: Bearer <accessToken>`.
+
+| Area | Key Endpoints |
+|---|---|
+| **Auth** | `POST /auth/register` · `POST /auth/login` · `POST /auth/google-login` |
+| **MFA** | `POST /auth/mfa/setup` · `POST /auth/mfa/verify` · `POST /auth/mfa/verify-login` |
+| **Email** | `POST /auth/verify-registration-email` · `POST /auth/forgot-password` |
+| **QR Login** | `POST /auth/qr/create` · `GET /auth/qr/scan/:id` · `POST /auth/qr/approve` |
+| **Sessions** | `GET /auth/refresh` · `POST /auth/logout` |
+| **Campaigns** | `POST /campain/managecampain/add` · `PUT …/update/:id` · `DELETE …/delete/:id` |
+| **Donations** | `POST /donation/createDonation` · `GET /donator/readdonaions/*` |
+| **Organizers** | `GET /organizor/dashboard` · `POST /organizor/submitVerification` |
+| **Public** | `GET /publicca/all` · `GET /publicor/all` · `GET /publicdo/all` |
+| **Admin** | `GET /admin/getAllUsers` · `PUT /admin/updateVerification/:id` · `GET /admin/getAllAuditLogs` |
+
+📘 **Full request/response schemas** → [`backend/README.md`](./backend/README.md)
 
 ---
 
-## 🧪 Testing
+## 🔐 Security Deep-Dive
 
-- **Backend:** runtime smoke via the API; helper scripts in `backend/scripts/` (`seed.js`, `createAdmin.js`, `clear_test_user.js`).
-- **Mobile:** `app/src/test/java/com/aidup/app/AidItemTest.kt` (JUnit) plus Android instrumented tests.
-- **Frontend:** ESLint + TypeScript type-checking enforced in the build pipeline.
+| Layer | Protection |
+|---|---|
+| **HTTP Headers** | `helmet` — CSP, HSTS, X-Frame-Options, etc. |
+| **CORS** | Whitelist origins via `FRONTEND_URL` |
+| **Query Injection** | Mongo-sanitize + parameterized Mongoose |
+| **HTTP Pollution** | `hpp` middleware |
+| **Rate Limiting** | 100 req / 15 min on `/auth` routes |
+| **Password Policy** | ≥ 12 chars · mixed case · digits · symbols |
+| **Tokens** | Access (15 m, in response) + Refresh (7 d, `httpOnly` cookie) |
+| **MFA** | TOTP (time-based one-time password) via authenticator apps |
+| **File Uploads** | Type/extension validation + `sharp` image hashing |
+| **Audit Trail** | Every admin + organizer action logged to `AuditLog` |
+| **Request Logging** | Structured JSON via `pino-http` |
+
+---
+
+## 🧪 Testing & Quality
+
+| Area | Tools & Practices |
+|---|---|
+| **Frontend** | TypeScript strict mode · ESLint · React compiler |
+| **Backend** | Zod runtime validation · Audit logging |
+| **Mobile** | JUnit 4 · AndroidX Test · Espresso · Compose UI Tests |
+| **Scripts** | `seed.js` · `createAdmin.js` · `clear_test_user.js` |
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork the repository and create a feature branch (`git checkout -b feature/awesome`).
-2. Follow existing conventions:
-   - **Backend:** controller → service → route, with `zod` validation and RBAC middleware.
-   - **Frontend:** feature folders under `pages/` + `components/`, state via Zustand hooks.
-   - **Mobile:** Compose `ViewModel` + `repository` + `network` layer separation.
-3. Run linters/builds before opening a PR.
-4. Backend contributor guide: `frontend/CONTRIBUTING_BACKEND.md`.
+We welcome contributions from developers of all skill levels.
+
+```bash
+git clone https://github.com/Nciibi/aidup-platform.git
+git checkout -b feature/<your-idea>
+# Make your changes
+npm run lint
+git commit -m "feat: add <your-feature>"
+git push origin feature/<your-idea>
+# Open a Pull Request 🚀
+```
+
+**Coding conventions:**
+- **Backend:** `zod` validation → `controller` → `service` → `route`
+- **Frontend:** Feature folder in `pages/` + `components/`, state via Zustand
+- **Mobile:** `ViewModel` → `repository` → `network` layering
+
+Read the **[Backend Contributor Guide](./frontend/CONTRIBUTING_BACKEND.md)** for detailed patterns.
 
 ---
 
 ## 🗺️ Roadmap
 
-- [ ] Payment gateway integration (Stripe / PayPal) beyond proof-of-payment uploads.
-- [ ] Real-time donation progress notifications via WebSockets.
-- [ ] Organizer analytics dashboard enhancements.
-- [ ] Localization / i18n for web and mobile.
-- [ ] CI/CD pipeline (lint, test, build) across all three apps.
+- [ ] **Payment Gateway** — Stripe / PayPal integration
+- [ ] **Live Notifications** — WebSocket push for donation updates
+- [ ] **Analytics Dashboard** — Organizer campaign insights
+- [ ] **i18n** — Multi-language support (web + mobile)
+- [ ] **CI/CD Pipeline** — Automated lint, test, build for all apps
+- [ ] **Push Notifications** — Mobile alerts for donations and approvals
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See individual component READMEs for details.
+Distributed under the **MIT License**.
 
 ---
 
 <p align="center">
+  Made with ❤️ for a better world.<br>
   <i>"No one has ever become poor by giving."</i> — Anne Frank
+</p>
+
+<p align="center">
+  <a href="#aidup">⬆ Back to Top</a>
 </p>
