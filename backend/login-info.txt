@@ -1,0 +1,11 @@
+admin login :
+admin@aidup.com : admin123
+
+organizer login :
+organizer@aidup.com  : Test1234!   
+
+donator login :
+donator@aidup.com : Test1234! 
+
+use    them after seending the db with the seed.js and create admin.js       
+

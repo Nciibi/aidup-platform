@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AidUp</string>
+    <string name="google_web_client_id" translatable="false">your_google_web_client_id_here</string>
+</resources>
