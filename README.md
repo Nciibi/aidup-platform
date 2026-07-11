@@ -24,7 +24,7 @@ AidUp is a **production-grade**, full-stack charitable platform that connects do
 We believe in making giving **accessible**, **verifiable**, and **impactful**.
 
 <div align="center">
-  <img src="frontend/src/assets/hero.png" alt="AidUp Platform Preview" width="80%" style="border-radius: 12px; border: 1px solid #333;">
+  <img src="assets/screenshot.png" alt="AidUp Platform Preview" width="80%" style="border-radius: 12px; border: 1px solid #333;">
 </div>
 
 > 🎯 **Perfect for**: Non-profit tech teams, hackathon projects, portfolio showcases, and anyone building mission-driven platforms.
