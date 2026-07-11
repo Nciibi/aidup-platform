@@ -392,7 +392,7 @@ git push origin feature/<your-idea>
 - **Frontend:** Feature folder in `pages/` + `components/`, state via Zustand
 - **Mobile:** `ViewModel` → `repository` → `network` layering
 
-Read the **[Backend Contributor Guide](./frontend/CONTRIBUTING_BACKEND.md)** for detailed patterns.
+Read the **[Contributing Guide](./CONTRIBUTING.md)** and **[Backend Contributor Guide](./frontend/CONTRIBUTING_BACKEND.md)** for detailed patterns.
 
 ---
 
@@ -409,7 +409,7 @@ Read the **[Backend Contributor Guide](./frontend/CONTRIBUTING_BACKEND.md)** for
 
 ## 📄 License
 
-Distributed under the **MIT License**.
+Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for details.
 
 ---
 
